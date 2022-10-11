@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - game screen</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="easy">
+  <a href="index.html">
+  <img class="logo" name="logo" src="https://i.imgur.com/uXDi718.gif" alt="Build Picker"/>
+  </a>
+<div name="logo" class="logo"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <div class="car">
+    <a href="" id="build"><img id="car" src="">
+      <img class="car" />
+      </a>
+  </div>
+  <form>
+  <br>
+</form>
+ <div id="button button1">
+   <a href='#' onclick="random();" class='button button1'>New Build</a>
+</div>
+<div class="cars">
+  <input type="hidden" class="cars" id="cars"/>
+</div>
+  </div>
+<!-- partial -->
+  <script src='https://unpkg.com/vue@next'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
+<style>
+body {
+  color: #FFFFFF;
+  text-align: center;
+  background-color:#2c2f33;
+}
+ .logo {
+  position: absolute;
+  left: 50px;
+  top: 25px;
+  width: 250px;
+}
+ .car {
+  position: absolute;
+  width:650px;
+  top:50px;
+  left:225px; 
+}
+.button {
+  position: absolute;
+  border: none;
+  right: 650px;
+  top:27px;
+  color: #2c2f33;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1 {
+  background-color: #2c2f33; 
+  color: white; 
+  border: 2px solid #7cbb00;
+}
+
+.button1:hover {
+  background-color: #7cbb00;
+  color: white;
+}
+</style>
+<script>
+var items = [
+  {
+  img:"https://user-images.githubusercontent.com/89903727/193781724-77d45706-4bff-4a99-bf61-917e782151ef.jpg",
+  href:"http://www.pathofexile.com/forum/view-thread/2976624",
+    },
+  {
+  img:"https://user-images.githubusercontent.com/89903727/193781723-fdd51080-54d2-4507-9abc-ed2ffb9d478e.jpg",
+  href:"http://www.pathofexile.com/forum/view-thread/3261066",
+    },
+  {
+  img:"https://user-images.githubusercontent.com/89903727/193781719-90bf3e9c-b14c-4b07-a41a-525a81451e2f.png",
+  href:"http://www.pathofexile.com/forum/view-thread/3229979",
+    },
+  {
+ img:"https://user-images.githubusercontent.com/89903727/193781714-f85cc1a3-6d69-4d7b-8174-30bf226632d3.jpg",
+  href:"https://www.youtube.com/watch?v=kY3u4u1fMLA",
+    },
+  {
+ img:"https://user-images.githubusercontent.com/89903727/193781711-6f0fa7ba-5cfa-4006-92bf-ea1332022883.jpg",
+  href:"http://www.pathofexile.com/forum/view-thread/3230482",
+    },
+];
+const image = document.getElementById("build");
+function random(){
+  document.getElementById('cars').value = '';
+    $(".car").each(function (index){
+
+        var car = items[Math.floor(Math.random() * items.length)];
+      var img = car.img;
+      var build = car.href;
+        $(this).attr('src', img);
+      currentCar = img;
+      currentBuild = build;
+      document.getElementById("build").href=build;
+    });
+
+
+  console.log(currentCar); 
+  console.log(currentBuild);
+}
+var $button = document.querySelector('.button');
+</script>
